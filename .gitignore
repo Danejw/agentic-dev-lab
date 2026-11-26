@@ -4,3 +4,4 @@ node_modules/
 coverage/
 dist/
 .agent-session.log
+.agent-audit.jsonl
