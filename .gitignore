@@ -5,3 +5,4 @@ coverage/
 dist/
 .agent-session.log
 .agent-audit.jsonl
+.project-status-requests.jsonl

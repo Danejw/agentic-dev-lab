@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "hooks": {
+    "userPromptSubmitted": [
+      {
+        "type": "command",
+        "bash": "node .github/hooks/project-status.cjs",
+        "powershell": "node .github/hooks/project-status.cjs",
+        "timeoutSec": 15
+      }
+    ]
+  }
+}
