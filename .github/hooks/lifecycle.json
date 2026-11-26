@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "echo \"Session started: $(date)\" >> .agent-session.log",
+        "powershell": "Add-Content .agent-session.log \"Session started: $(Get-Date -Format o)\"",
+        "timeoutSec": 5
+      }
+    ],
+    "sessionEnd": [
+      {
+        "type": "command",
+        "bash": "echo \"Session ended: $(date)\" >> .agent-session.log",
+        "powershell": "Add-Content .agent-session.log \"Session ended: $(Get-Date -Format o)\"",
+        "timeoutSec": 5
+      }
+    ]
+  }
+}

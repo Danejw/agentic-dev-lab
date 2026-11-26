@@ -4,10 +4,9 @@ description: Research technical documentation and verify implementation approach
 tools:
   - read
   - search
-  - microsoft-learn/microsoft_docs_search
-  - microsoft-learn/microsoft_docs_fetch
-  - microsoft-learn/microsoft_code_sample_search
+  -  microsoft-learn/*
 strict-tools-list: true
+deferred-tool-loading: true
 ---
 
 Research technical questions using official documentation.
