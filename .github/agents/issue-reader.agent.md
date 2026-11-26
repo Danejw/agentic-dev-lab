@@ -1,7 +1,7 @@
 ---
 name: issue-reader
 description: Retrieve and summarize GitHub issue evidence
-tools: [read, search, github/issue_read]
+tools: [read, search, github-mcp-server/issue_read]
 strict-tools-list: true
 ---
 
