@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Validation is handled by Agent A.
+=======
+Validation is handled by Agent B.
+>>>>>>> feat/conflict-b
