@@ -4,6 +4,7 @@
     "preToolUse": [
       {
         "type": "command",
+        "matcher": "bash|powershell",
         "bash": "node .github/hooks/security.cjs",
         "powershell": "node .github/hooks/security.cjs",
         "timeoutSec": 5

@@ -10,6 +10,20 @@ test('creates a normalized task', () => {
   });
 });
 
+test('trims task IDs', () => {
+  assert.deepEqual(createTask('  1  ', 'Read docs'), {
+    id: '1',
+    title: 'Read docs',
+    done: false,
+  });
+});
+
+test('rejects a whitespace-only ID', () => {
+  assert.throws(() => createTask('   ', 'Read docs'), {
+    message: 'Invalid task',
+  });
+});
+
 test('rejects an empty title', () => {
   assert.throws(() => createTask('1', ' '));
 });
