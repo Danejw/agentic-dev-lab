@@ -11,6 +11,10 @@ export function completeTask(task: Task): Task {
   return { ...task, done: true };
 }
 
+export function countCompletedTasks(tasks: Task[]): number {
+  return tasks.filter((task) => task.done).length;
+}
+
 export function filterTasks(
   tasks: Task[],
   status: 'all' | 'open' | 'done',

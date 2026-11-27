@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createTask, completeTask, filterTasks } from '../src/tasks.js';
+import {
+  createTask,
+  completeTask,
+  filterTasks,
+  countCompletedTasks,
+} from '../src/tasks.js';
 
 test('creates a normalized task', () => {
   assert.deepEqual(createTask('1', '  Read docs  '), {
@@ -32,6 +37,29 @@ test('completes without mutating the original', () => {
   const task = createTask('1', 'Read docs');
   assert.equal(completeTask(task).done, true);
   assert.equal(task.done, false);
+});
+
+test('counts zero completed tasks in an empty array', () => {
+  assert.equal(countCompletedTasks([]), 0);
+});
+
+test('counts completed tasks in a mixed array', () => {
+  const tasks = [
+    createTask('1', 'Read docs'),
+    completeTask(createTask('2', 'Write tests')),
+    completeTask(createTask('3', 'Review changes')),
+  ];
+
+  assert.equal(countCompletedTasks(tasks), 2);
+});
+
+test('counts every task when all tasks are completed', () => {
+  const tasks = [
+    completeTask(createTask('1', 'Read docs')),
+    completeTask(createTask('2', 'Write tests')),
+  ];
+
+  assert.equal(countCompletedTasks(tasks), tasks.length);
 });
 
 test('filters tasks by status while preserving their original order', () => {
