@@ -1,0 +1,11 @@
+# Agent configuration, security policies and CI
+/.github/ @Danejw
+
+# Orchestration and automation scripts
+/scripts/ @Danejw
+
+# Dependencies and execution configuration
+/package.json @Danejw
+/package-lock.json @Danejw
+/tsconfig.json @Danejw
+/.gitignore @Danejw
